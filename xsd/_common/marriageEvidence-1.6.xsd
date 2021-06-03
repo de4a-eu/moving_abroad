@@ -7,13 +7,13 @@
 	See also the table specification with design decisions: https://ihuedu-my.sharepoint.com/:x:/g/personal/i_konstantinidis_ihu_edu_gr/ES1FBLrtoqBNuINmmwklN4YB3-nlFyK8leA11HFEemE_EQ?e=fVIp5l
 -->
 <!-- ===================================================== -->
-<xsd:schema targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::MarriageEvidence:v1.6" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns="urn:eu-de4a:xsd:CanonicalEvidenceType::MarriageEvidence:v1.6" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:person="http://www.w3.org/ns/corevocabulary/person" xmlns:location="http://www.w3.org/ns/corevocabulary/location" xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents" xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<xsd:schema xmlns="urn:eu-de4a:xsd:CanonicalEvidenceType::MarriageEvidence:v1.6" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:person="http://www.w3.org/ns/corevocabulary/person" xmlns:location="http://www.w3.org/ns/corevocabulary/location" xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents" xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::MarriageEvidence:v1.6" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" schemaLocation="../_external/UBL-2.3/xsd/common/BDNDR-UnqualifiedDataTypes-1.1.xsd"/>
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/person" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CorePerson-v1.00.xsd"/>
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/location" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreLocation-v1.00.xsd"/>
-	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.1/xsd/CoreVocabularies-BasicComponents-1.1.xsd"/>
+	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyBasicComponents-v1.00.xsd"/>
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyAggregateComponents-v1.00.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="../_external/UBL-2.3/xsd/common/UBL-CommonBasicComponents-2.3.xsd"/>
 	<!-- ===================================================== -->
@@ -96,7 +96,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="MarriageType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					A legally accepted relationship between two Persons in which they live together.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -155,7 +155,7 @@
 								To be based on Eurovoc marital status as a codelist: https://op.europa.eu/en/web/eu-vocabularies/concept/-/resource?uri=http://eurovoc.europa.eu/4184&amp;lang=en
 							</xsd:documentation>
 						</xsd:annotation>
-					</xsd:element>				  				  
+					</xsd:element>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -215,7 +215,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="JurisdictionType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					The authority that an official organisation has, to make legal decisions about somebody/something.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -236,7 +236,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="RestrictedJurisdictionType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					The authority that an official organisation has, to make legal decisions about somebody/something.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -257,7 +257,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="ConstrainedLocationAddressType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					The Address of a location based on the INSPIRE Address representation. It is subclass of the class Address.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -285,7 +285,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="LocationAddressType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					The Address of a location based on the INSPIRE Address representation. It is subclass of the class Address.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -313,7 +313,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="AddressType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					Representation of address based on the INSPIRE Address Representation.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -334,7 +334,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="RestrictedAddressType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					Representation of address based on the INSPIRE Address Representation.
 				</xsd:documentation>
 		</xsd:annotation>

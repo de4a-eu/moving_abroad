@@ -5,9 +5,9 @@
 	version 1.6
 	Notes: Use of the xsd:restriction method for reusing the Core Vocabularies. Added the EndOfMarriageType class
 	See also the table specification with design decisions: https://ihuedu-my.sharepoint.com/:x:/g/personal/i_konstantinidis_ihu_edu_gr/ES1FBLrtoqBNuINmmwklN4YB3-nlFyK8leA11HFEemE_EQ?e=fVIp5l
--->
+--> 
 <!-- ===================================================== -->
-<xsd:schema targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::BirthEvidence:v1.6" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns="urn:eu-de4a:xsd:CanonicalEvidenceType::BirthEvidence:v1.6" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:person="http://www.w3.org/ns/corevocabulary/person" xmlns:location="http://www.w3.org/ns/corevocabulary/location" xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents" xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<xsd:schema xmlns="urn:eu-de4a:xsd:CanonicalEvidenceType::BirthEvidence:v1.6" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:person="http://www.w3.org/ns/corevocabulary/person" xmlns:location="http://www.w3.org/ns/corevocabulary/location" xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents" xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::BirthEvidence:v1.6" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/person" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CorePerson-v1.00.xsd"/>
@@ -154,29 +154,29 @@
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="PersonType">
-			  <xsd:sequence>
-				  <xsd:element name="DateOfBirth" type="DateObjectType" minOccurs="0" maxOccurs="1">
+				<xsd:sequence>
+					<xsd:element name="DateOfBirth" type="DateObjectType" minOccurs="0" maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation xml:lang="en">
 								The day on which the Parent was born.
 							</xsd:documentation>
 						</xsd:annotation>
-				  </xsd:element>
-				  <xsd:element name="Gender" type="udt:CodeType" minOccurs="0" maxOccurs="1">
+					</xsd:element>
+					<xsd:element name="Gender" type="udt:CodeType" minOccurs="0" maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation xml:lang="en">
 								The chromosomal state, and reproductive organs and structures of a Person that allows them to be distinguished as female or male.
 							</xsd:documentation>
 						</xsd:annotation>
-				  </xsd:element>
-				  <xsd:element name="PlaceOfBirth" type="LocationAddressType" minOccurs="0" maxOccurs="1">
+					</xsd:element>
+					<xsd:element name="PlaceOfBirth" type="LocationAddressType" minOccurs="0" maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation xml:lang="en">
 								The Location where the Parent was born.
 							</xsd:documentation>
 						</xsd:annotation>
-				  </xsd:element>
-			  </xsd:sequence>
+					</xsd:element>
+				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -194,27 +194,27 @@
 						A family name is usually shared by members of a family. This attribute also carries prefixes or suffixes which are part of the family name, e.g. “de Boer”, “van de Putte”, “von und zu Orlow”. Multiple family names, such as are commonly found in Hispanic countries, are recorded in the single family name field so that, for example, Miguel de Cervantes Saavedra's family name would be recorded as "de Cervantes Saavedra".
 					</xsd:documentation>
 				</xsd:annotation>
-		  </xsd:element>
-		  <xsd:element name="Identifier" type="cva:CvidentifierType" minOccurs="0" maxOccurs="unbounded">
+			</xsd:element>
+			<xsd:element name="Identifier" type="cva:CvidentifierType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
 						The identifier relation is used to link a Person to any formally issued Identifier for that Person.
 					</xsd:documentation>
 				</xsd:annotation>
-		  </xsd:element>
-		  <xsd:element name="Citizenship" type="JurisdictionType" minOccurs="0" maxOccurs="unbounded">
+			</xsd:element>
+			<xsd:element name="Citizenship" type="JurisdictionType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
 						The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport. Multiple citizenships are recorded as multiple instances of the citizenship relationship.
 					</xsd:documentation>
 				</xsd:annotation>
-		  </xsd:element>
+			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 	<!--=====================================================================================-->
 	<xsd:complexType name="JurisdictionType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					The authority that an official organisation has, to make legal decisions about somebody/something.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -235,7 +235,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="RestrictedJurisdictionType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					The authority that an official organisation has, to make legal decisions about somebody/something.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -256,7 +256,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="ConstrainedLocationAddressType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					The Address of a location based on the INSPIRE Address representation. It is subclass of the class Address.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -284,7 +284,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="LocationAddressType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					The Address of a location based on the INSPIRE Address representation. It is subclass of the class Address.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -312,7 +312,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="AddressType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					Representation of address based on the INSPIRE Address Representation.
 				</xsd:documentation>
 		</xsd:annotation>
@@ -333,7 +333,7 @@
 	<!--=====================================================================================-->
 	<xsd:complexType name="RestrictedAddressType">
 		<xsd:annotation>
-				<xsd:documentation xml:lang="en">
+			<xsd:documentation xml:lang="en">
 					Representation of address based on the INSPIRE Address Representation.
 				</xsd:documentation>
 		</xsd:annotation>
