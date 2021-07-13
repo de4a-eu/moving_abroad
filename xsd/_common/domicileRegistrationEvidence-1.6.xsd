@@ -101,7 +101,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Domicile" type="AddressType" minOccurs="1" maxOccurs="1">
+			<xsd:element name="Domicile" type="ConstrainedLocationAddressType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
 						Current domicile inhabited by person.
