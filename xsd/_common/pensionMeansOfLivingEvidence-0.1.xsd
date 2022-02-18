@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== Schema Header ================================= -->
+<!--	
+	Pension Means Of Living Evidence is based on SDG Model and ISA2 Core Vocabularies
+	version 0.1	
+	See also the table specification with design decisions: https://newrepository.atosresearch.eu/index.php/f/1125577
+-->
+<!-- ===================================================== -->
+<xsd:schema xmlns="urn:eu-de4a:xsd:CanonicalEvidenceType::PensionMeansOfLivingEvidence:v0.1" 
+			xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" 
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			xmlns:person="http://www.w3.org/ns/corevocabulary/person" 
+			xmlns:location="http://www.w3.org/ns/corevocabulary/location" 
+			xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents" 
+			xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents" 
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
+			targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::PensionMeansOfLivingEvidence:v0.1" 
+			elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<!-- ===== Imports======================================== -->
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" schemaLocation="../_external/UBL-2.3/xsd/common/BDNDR-UnqualifiedDataTypes-1.1.xsd"/>
+	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/person" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CorePerson-v1.00.xsd"/>
+	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/location" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreLocation-v1.00.xsd"/>
+	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyBasicComponents-v1.00.xsd"/>
+	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyAggregateComponents-v1.00.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="../_external/UBL-2.3/xsd/common/UBL-CommonBasicComponents-2.3.xsd"/>
+	<!-- ===================================================== -->
+	<xsd:element name="PensionMeansOfLivingEvidence" type="PensionMeansOfLivingEvidenceType"/>
+	<xsd:complexType name="PensionMeansOfLivingEvidenceType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				This class contains elements related to the Means Of Living Evidence.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Identifier" type="cva:CvidentifierType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						An unambiguous reference to the Pension Means Of Living Evidence.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The most recent date on which the Pension Means Of Living Evidence instance was issued.	
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IssuingAuthority" type="PublicOrganisationType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						A Public Organisation with official authority in charge of issuing the Pension Means Of Living Evidence.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Certifies" type="PensionMeansOfLivingInfoType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Attesting in a formal way that the Pension data is true.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="PublicOrganisationType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Any organisation that is defined as being part of the public sector by a legal framework at any level.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Identifier" type="cva:CvidentifierType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Many organisations are referred to by an acronym or some other identifier. For example, among the EU institutions, the ECB is the identifier for the European Central Bank, OLAF for the European AntiN/AFraud Office, and so on. These are formally recognised by the European Commission which provides a list of such acronyms. Analogous lists should be used in other contexts.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PrefLabel" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organisation. An organisation may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property.	
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>	
+	<!--=====================================================================================-->
+	<xsd:complexType name="PensionMeansOfLivingInfoType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Information on different Pension benefits.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DataSubject" type="PersonType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Person, who is subject to this information.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PensionList" type="PensionListType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						List of pensions and benefits. Contains information on the pensions of the person for whom the query was made.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="PensionListType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				List of pensions of the citizen.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Pension" type="PensionType" minOccurs="1" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Contains detailed data about each specific pension.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="PensionType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Pension of the citizen.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PensionCategory" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Literals of the specific codes of the Spanish pension system. The possible values are listed in tab "Pensions".
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<!-- TODO: add categories -->
+						<xsd:enumeration value="TODO"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			
+			<xsd:element name="Status" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Status of the benefit.
+						The possible values are:
+							- ACTIVE: the citizen is receiving the unemployment benefit
+							- NON-ACTIVE: the citizen is not receiving the unemployment benefit
+							- NON-ACTIVE due to APRE (APRE: "Cumulative and early payment of contributory unemployment benefit to foreign workers returning to their country of origin")
+							- NON-ACTIVE when the benefit has been capitalised
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="ACTIVE"/>
+						<xsd:enumeration value="NON-ACTIVE"/>
+						<xsd:enumeration value="NON-ACTIVE due to APRE"/>
+						<xsd:enumeration value="NON-ACTIVE due to capitalisation"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="GrossAmount" type="MonetaryAmountType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						It corresponds to the amount of the benefit, including the amounts of possible deductions plus the amount of Personal Income Tax (if applicable). There may be benefits with a gross amount equal to zero.
+						For all social public benefits, the monthly amount of the benefit as at the date of consultation will be returned.
+						For M6 or P6 direct payment benefits, the gross amount will be the amount that will be paid for the whole benefit even if it has not yet been paid.
+						For temporary disability (direct payment benefit I6 or I7), the gross amount will be the amount that has been paid up to the time of the consultation.
+						If there are confirmation statements captured but not paid, the payment will be calculated and included in the gross amount.
+						Amount in euro cents.
+						The Format is NNNNNNN
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="NetAmount" type="MonetaryAmountType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						It corresponds to the amount of the benefit after the possible deductions have been applied, plus the amount of Personal Income Tax (if applicable). There may be benefits with a net amount equal to zero, either because it is based on a gross amount of zero, or because it is zero after applying the corresponding deductions.  
+						In all benefits outside the Social Security System, the net amount will coincide with the gross amount, since there is no available data on possible deductions.
+						Amount in euro cents.
+						The Format is NNNNNNN
+					</xsd:documentation>
+				</xsd:annotation>				
+			</xsd:element>
+			<xsd:element name="NumberPaymentsYear" type="xsd:integer" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						It refers to the number of payments corresponding to that benefit in the period of one year. Unless there is an error, this field will always be returned within the benefits of the Registry of Public Social Benefits.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PeriodOfTime" type="PeriodOfTimeType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Effect date: It corresponds to the date of economic effects of the benefit. It will be returned in all cases, except for Temporary Disability benefits (I6 or I7), either the provision in Direct Payment or Delegated Payment. The format is YYYYMMDD
+
+						ExpectedEndDate: Corresponds to the date on which the benefit ends. No data will be returned for the benefits of the Registry of Public Social Benefits
+						In the case of maternity or paternity, it will correspond to the expiration date of the subsidy. In the case of temporary disability, the end date is the date of the last payment made or the last confirmation part noted. In temporary disability, the delegated payment will not be completed.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+		</xsd:sequence>
+	</xsd:complexType>	
+	<!--=====================================================================================-->
+	<xsd:complexType name="PeriodOfTimeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Period of time.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="udt:DateType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Effective start date of a period time. The format is YYYY-MM-DD.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+			<xsd:element name="EndDate" type="udt:DateType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Expected end date or effective end date in case of suspension/cancellation/finish. The format is YYYY-MM-DD.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="MonetaryAmountType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				A monetary value.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Currency" type="udt:DateType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The currency in which the Monetary Amount is expressed.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[a-z]{3}" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+			</xsd:element>			
+			<xsd:element name="Amount" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The quantitative value of the Monetary Amount.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+                    <xsd:restriction base="xsd:integer">
+                        <xsd:pattern value="[0-9]{7}" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+			</xsd:element>			
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="PersonType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				An individual natural person who may be dead or alive, but not imaginary.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Identifier" type="cva:CvidentifierType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The identifier relation is used to link a Person to any formally issued Identifier for that Person.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SocialSecurityNumber" type="cva:CvidentifierType" minOccurs="1" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Social Security numbers of the consulted citizen. Up to 10 numbers can be returned, althoug citizens usually have only one Social Security number.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PersonName" type="NameType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The family name and given name of a Person. At least one of the two must exist.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+			<xsd:element name="DateOfBirth" type="DateObjectType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The day on which the Person was born.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="DateObjectType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Structured representation of date with year, month and day of the month.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Year" type="xsd:gYear" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						A gregorian calendar year. The value space of Year is the set of Gregorian calendar years as defined in § 5.2.1 of ISO 8601. Specifically, it is a set of one-year long, non-periodic instances e.g. lexical 1999 to represent the whole year 1999, independent of how many months and days this year has.	
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Month" type="xsd:gMonth" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						A gregorian month that recurs every year. The value space of Month is the space of a set of calendar months as defined in § 3 of ISO 8601. Specifically, it is a set of one-month long, yearly periodic instances.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Day" type="xsd:gDay" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						A gregorian day that recurs, specifically a day of the month such as the 5th of the month. The value space of Day is the space of a set of calendar dates as defined in § 3 of ISO 8601. Specifically, it is a set of one-day long, monthly periodic instances.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="NameType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				A name of a person that includes the family and given name.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="FamilyName" type="cbc:FamilyNameType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						A family name is usually shared by members of a family. This attribute also carries prefixes or suffixes which are part of the family name, e.g. “de Boer”, “van de Putte”, “von und zu Orlow”. Multiple family names, such as are commonly found in Hispanic countries, are recorded in the single family name field so that, for example, Miguel de Cervantes Saavedra's family name would be recorded as "de Cervantes Saavedra".
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="GivenName" type="cvb:GivenNameType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						A given name, or multiple given names, are the denominator(s) that identify an individual within a family. These are given to a Person by his or her parents at birth or may be legally recognised as 'given names' through a formal process. All given names are ordered in one field so that, for example, the given name for Johann Sebastian Bach is “Johann Sebastian”.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

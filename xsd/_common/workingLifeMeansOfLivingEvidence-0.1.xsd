@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ===== Schema Header ================================= -->
 <!--	
-	Means Of Living Evidence is based on SDG Model and ISA2 Core Vocabularies
+	Working Life Means Of Living Evidence is based on SDG Model and ISA2 Core Vocabularies
 	version 0.1	
 	See also the table specification with design decisions: https://newrepository.atosresearch.eu/index.php/f/1125577
 -->
 <!-- ===================================================== -->
-<xsd:schema xmlns="urn:eu-de4a:xsd:CanonicalEvidenceType::MeansOfLivingEvidence:v0.1" 
+<xsd:schema xmlns="urn:eu-de4a:xsd:CanonicalEvidenceType::WorkingLifeMeansOfLivingEvidence:v0.1" 
 			xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" 
 			xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 			xmlns:person="http://www.w3.org/ns/corevocabulary/person" 
@@ -14,7 +14,7 @@
 			xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents" 
 			xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents" 
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
-			targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::MeansOfLivingEvidence:v0.1" 
+			targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::WorkingLifeMeansOfLivingEvidence:v0.1" 
 			elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
@@ -25,8 +25,8 @@
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyAggregateComponents-v1.00.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="../_external/UBL-2.3/xsd/common/UBL-CommonBasicComponents-2.3.xsd"/>
 	<!-- ===================================================== -->
-	<xsd:element name="MeansOfLivingEvidence" type="MeansOfLivingEvidenceType"/>
-	<xsd:complexType name="MeansOfLivingEvidenceType">
+	<xsd:element name="WorkingLifeMeansOfLivingEvidence" type="WorkingLifeMeansOfLivingEvidenceType"/>
+	<xsd:complexType name="WorkingLifeMeansOfLivingEvidenceType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en">
 				This class contains elements related to the Means Of Living Evidence.
@@ -36,35 +36,28 @@
 			<xsd:element name="Identifier" type="cva:CvidentifierType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						An unambiguous reference to the Means Of Living Evidence.
+						An unambiguous reference to the Working Life Means Of Living Evidence.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						The most recent date on which the Means Of Living Evidence instance was issued.	
+						The most recent date on which the Working Life Means Of Living Evidence instance was issued.	
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="IssuingAuthority" type="PublicOrganisationType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						A Public Organisation with official authority in charge of issuing the Means Of Living Evidence.
+						A Public Organisation with official authority in charge of issuing the Working Life Means Of Living Evidence.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="IssuingPlace" type="ConstrainedLocationAddressType" minOccurs="1" maxOccurs="1">
+			<xsd:element name="Certifies" type="WorkingLifeMeansOfLivingInfoType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						The Location where the Means Of Living Evidence was issued.
-					</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="CertifiesMeansOfLivingInfo" type="MeansOfLivingInfoType" minOccurs="1" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation xml:lang="en">
-						Attesting in a formal way that the pension, benefits and work data are true.
+						Attesting in a formal way that the Working Life data is true.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -81,45 +74,31 @@
 			<xsd:element name="Identifier" type="cva:CvidentifierType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						Many organisations are referred to by an acronym or some other identifier. For example, among the EU institutions, the ECB is the identifier for the European Central Bank, OLAF for the European Anti-Fraud Office, and so on. These are formally recognised by the European Commission which provides a list of such acronyms. Analogous lists should be used in other contexts.
+						Many organisations are referred to by an acronym or some other identifier. For example, among the EU institutions, the ECB is the identifier for the European Central Bank, OLAF for the European AntiN/AFraud Office, and so on. These are formally recognised by the European Commission which provides a list of such acronyms. Analogous lists should be used in other contexts.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="PrefLabel" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organisation. An organisation may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property.
+						As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organisation. An organisation may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property.	
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>	
 	<!--=====================================================================================-->
-	<xsd:complexType name="MeansOfLivingInfoType">
+	<xsd:complexType name="WorkingLifeMeansOfLivingInfoType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en">
-				This class contains elements related to the means of living information.
+				Information on different working life benefits.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="DataSubject" type="PersonType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						Person, living in the domicile.
-					</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="PensionList" type="PensionListType" minOccurs="0" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation xml:lang="en">
-						List of pensions and benefits. Contains information on the pensions of the person for whom the query was made.
-					</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="UnemploymentData" type="UnemploymentDataType" minOccurs="0" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation xml:lang="en">
-						Current unemployment data of the citizen.
+						Person, who is subject to information.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -133,60 +112,132 @@
 		</xsd:sequence>
 	</xsd:complexType>
 	<!--=====================================================================================-->
-	<xsd:complexType name="PensionListType">
+	<xsd:complexType name="WorkingLifeType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en">
-				This class contains a list of specific pensions.
+				Working life of the citizen.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Pension" type="PensionType" minOccurs="1" maxOccurs="unbounded">
+			<xsd:element name="SituationsList" type="SituationsListType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						Specific pension information.
+						Contains the list of situations of the consulted citizen.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="SituationsListType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Contains the list of situations of the consulted citizen.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Situation" type="SituationType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Contains the data of each situation of the consulted citizen.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="SituationType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Contains the data of each situation of the consulted citizen.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="SocialSecurityNumber" type="cva:CvidentifierType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Social security number of the situation returned.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Status" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Status of the benefit.
+						The possible values are:
+							- ACTIVE: the citizen is receiving the unemployment benefit
+							- NON-ACTIVE: the citizen is not receiving the unemployment benefit
+							- NON-ACTIVE due to APRE (APRE: "Cumulative and early payment of contributory unemployment benefit to foreign workers returning to their country of origin")
+							- NON-ACTIVE when the benefit has been capitalised
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="ACTIVE"/>
+						<xsd:enumeration value="NON-ACTIVE"/>
+						<xsd:enumeration value="NON-ACTIVE due to APRE"/>
+						<xsd:enumeration value="NON-ACTIVE due to capitalisation"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PeriodOfTime" type="PeriodOfTimeType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Period of work activity. It includes:
+							- Date of start of work activity.
+							- Date from which the registration takes effect for the purposes of entitlement to the benefits of the Social Security system, except for benefits resulting from accidents at work and occupational diseases, unemployment and health care resulting from common illness, maternity and non-occupational accidents, in which case the effective date of registration coincides, in any case, with the date of employment.
+							- Date of termination of employment.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ContractType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Identifier of the employment contract.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="FULL-TIME"/>
+						<xsd:enumeration value="PART-TIME"/>
+						<xsd:enumeration value="SEASONAL"/>
+						<xsd:enumeration value="PERMANENT"/>
+						<xsd:enumeration value="FIXED TERM"/>
+						<xsd:enumeration value="TEMPORARY"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="PeriodOfTimeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Period of time.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="udt:DateType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Effective start date of a period time. The format is YYYY-MM-DD.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+			<xsd:element name="EndDate" type="udt:DateType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Expected end date or effective end date in case of suspension/cancellation/finish. The format is YYYY-MM-DD.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>			
 		</xsd:sequence>
 	</xsd:complexType>
 	<!--=====================================================================================-->
-	<xsd:complexType name="PensionType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
-				TO BE DEFINED!!!
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			
-		</xsd:sequence>
-	</xsd:complexType>
-	<!--=====================================================================================-->
-	<xsd:complexType name="UnemploymentDataType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
-				TO BE DEFINED!!!
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			
-		</xsd:sequence>
-	</xsd:complexType>
-	<!--=====================================================================================-->
-	<xsd:complexType name="WorkingLifeType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
-				TO BE DEFINED!!!
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			
-		</xsd:sequence>
-	</xsd:complexType>
-	<!--=====================================================================================-->
 	<xsd:complexType name="PersonType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en">
-				This class contains elements related to the person
+				An individual natural person who may be dead or alive, but not imaginary.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -197,7 +248,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="SocialSecurityNumber" type="udt:TextType" minOccurs="1" maxOccurs="1">
+			<xsd:element name="SocialSecurityNumber" type="cva:CvidentifierType" minOccurs="1" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
 						Social Security numbers of the consulted citizen. Up to 10 numbers can be returned, althoug citizens usually have only one Social Security number.
@@ -207,7 +258,7 @@
 			<xsd:element name="PersonName" type="NameType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						A family name is usually shared by members of a family. This attribute also carries prefixes or suffixes which are part of the family name, e.g. “de Boer”, “van de Putte”, “von und zu Orlow”. Multiple family names, such as are commonly found in Hispanic countries, are recorded in the single family name field so that, for example, Miguel de Cervantes Saavedra's family name would be recorded as "de Cervantes Saavedra".
+						The family name and given name of a Person. At least one of the two must exist.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>			
@@ -217,121 +268,8 @@
 						The day on which the Person was born.
 					</xsd:documentation>
 				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="TransferRightsEEC" type="udt:CodeType" minOccurs="0" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation xml:lang="en">
-						Indicator for transfer of entitlements to EU countries. The possible values are: Y/N.
-						Having the entitlements transferred to EU countries means that the days in a situation of affiliation recorded in this report are only computable for access to the financial benefit of permanent disability derived from common contingencies, as the fractions of the contribution destined to cover retirement benefits and death and survival benefits derived from common contingencies have been transferred to the European Communities' personnel welfare system.
-					</xsd:documentation>
-				</xsd:annotation>
 			</xsd:element>			
 		</xsd:sequence>
-	</xsd:complexType>
-	<!--=====================================================================================-->
-	<xsd:complexType name="AddressType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
-					Representation of address based on the INSPIRE Address Representation.
-				</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:extension base="RestrictedAddressType">
-				<xsd:sequence>
-					<xsd:element name="AddressArea" type="cvb:CvaddressAreaType" minOccurs="0" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								Taking the definition from INSPIRE, the address area is: the name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit." This would typically be part of a city, a neighbourhood or village.	
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<!--=====================================================================================-->
-	<xsd:complexType name="RestrictedAddressType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
-					Representation of address based on the INSPIRE Address Representation.
-				</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:restriction base="cva:CvaddressType">
-				<xsd:sequence>
-					<xsd:element ref="cvb:PoBox" minOccurs="0" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								The Post Office Box number. INSPIRE's name for this is "postalDeliveryIdentifier" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology.
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element ref="cvb:LocatorDesignator" minOccurs="0" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								The locator designator is defined by the INSPIRE guidelines as "a number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators." In simpler terms, this is the building number, apartment number, etc. For an address such as "Flat 3, 17 Bridge Street", the locator is "flat 3, 17."	
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element ref="cvb:LocatorName" minOccurs="0" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								Based on the INSPIRE guidelines, locator name is defined as: "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building. The key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, "Shumann, Berlaymont" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.	
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element ref="cvb:Thoroughfare" minOccurs="0" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								The uppermost administrative unit for the address, almost always a country. Best practice is to use the ISO 3166-1 code.	
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element ref="cvb:PostName" minOccurs="0" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								The key postal division of the address, usually the city. (INSPIRE's definition is "One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element ref="cvb:PostCode" minOccurs="0" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								The post code (a.k.a postal code, zip code etc.). Post codes are common elements in many countries' postal address systems.
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-				</xsd:sequence>
-			</xsd:restriction>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<!--=====================================================================================-->
-	<xsd:complexType name="ConstrainedLocationAddressType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
-					The Address of a location based on the INSPIRE Address representation. It is subclass of the class Address.
-				</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:extension base="AddressType">
-				<xsd:sequence>
-					<xsd:element name="AdminUnitL2" type="cvb:AdminunitSecondlineType" minOccurs="1" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								The region of the address, usually a county, state or other such area that typically encompasses several localities.
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="AdminUnitL1" type="cvb:AdminunitFirstlineType" minOccurs="1" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								The uppermost administrative unit for the address, almost always a country. Best practice is to use the ISO 3166-1 code.	
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
 	</xsd:complexType>
 	<!--=====================================================================================-->
 	<xsd:complexType name="DateObjectType">
@@ -388,6 +326,4 @@
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<!--=====================================================================================-->
-
 </xsd:schema>
