@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           targetNamespace="http://publications.europa.eu/resource/countries"
+           version="20211208-0">
+   <xs:simpleType name="ISO3166CountryType">
+      <xs:restriction base="xs:string"><!--use_datpro[  ]-->
+         <xs:enumeration value="DATPRO"/>
+         <xs:enumeration value="1A0">
+            <xs:annotation>
+               <xs:documentation>Kosovo  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ABW">
+            <xs:annotation>
+               <xs:documentation>Aruba  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AFG">
+            <xs:annotation>
+               <xs:documentation>Afghanistan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AFI">
+            <xs:annotation>
+               <xs:documentation>French Afar and Issas  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AGO">
+            <xs:annotation>
+               <xs:documentation>Angola  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AIA">
+            <xs:annotation>
+               <xs:documentation>Anguilla  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ALA">
+            <xs:annotation>
+               <xs:documentation>Åland Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ALB">
+            <xs:annotation>
+               <xs:documentation>Albania  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AND">
+            <xs:annotation>
+               <xs:documentation>Andorra  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ANT">
+            <xs:annotation>
+               <xs:documentation>Netherlands Antilles  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ARE">
+            <xs:annotation>
+               <xs:documentation>United Arab Emirates  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ARG">
+            <xs:annotation>
+               <xs:documentation>Argentina  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ARM">
+            <xs:annotation>
+               <xs:documentation>Armenia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ASM">
+            <xs:annotation>
+               <xs:documentation>American Samoa  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ATA">
+            <xs:annotation>
+               <xs:documentation>Antarctica  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ATB">
+            <xs:annotation>
+               <xs:documentation>British Antarctic Territory  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ATF">
+            <xs:annotation>
+               <xs:documentation>French Southern Lands  / adm.status[retired]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ATG">
+            <xs:annotation>
+               <xs:documentation>Antigua and Barbuda  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ATN">
+            <xs:annotation>
+               <xs:documentation>Dronning Maud Land  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AUS">
+            <xs:annotation>
+               <xs:documentation>Australia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AUT">
+            <xs:annotation>
+               <xs:documentation>Austria  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AZE">
+            <xs:annotation>
+               <xs:documentation>Azerbaijan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BDI">
+            <xs:annotation>
+               <xs:documentation>Burundi  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BEL">
+            <xs:annotation>
+               <xs:documentation>Belgium  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BEN">
+            <xs:annotation>
+               <xs:documentation>Benin  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BES">
+            <xs:annotation>
+               <xs:documentation>Bonaire, Sint Eustatius and Saba  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BFA">
+            <xs:annotation>
+               <xs:documentation>Burkina Faso  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BGD">
+            <xs:annotation>
+               <xs:documentation>Bangladesh  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BGR">
+            <xs:annotation>
+               <xs:documentation>Bulgaria  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BHR">
+            <xs:annotation>
+               <xs:documentation>Bahrain  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BHS">
+            <xs:annotation>
+               <xs:documentation>Bahamas  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BIH">
+            <xs:annotation>
+               <xs:documentation>Bosnia and Herzegovina  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BLM">
+            <xs:annotation>
+               <xs:documentation>Saint Barthélemy  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BLR">
+            <xs:annotation>
+               <xs:documentation>Belarus  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BLZ">
+            <xs:annotation>
+               <xs:documentation>Belize  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BMU">
+            <xs:annotation>
+               <xs:documentation>Bermuda  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BOL">
+            <xs:annotation>
+               <xs:documentation>Bolivia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BRA">
+            <xs:annotation>
+               <xs:documentation>Brazil  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BRB">
+            <xs:annotation>
+               <xs:documentation>Barbados  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BRN">
+            <xs:annotation>
+               <xs:documentation>Brunei  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BTN">
+            <xs:annotation>
+               <xs:documentation>Bhutan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BUR">
+            <xs:annotation>
+               <xs:documentation>Burma  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BVT">
+            <xs:annotation>
+               <xs:documentation>Bouvet Island  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BWA">
+            <xs:annotation>
+               <xs:documentation>Botswana  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BYS">
+            <xs:annotation>
+               <xs:documentation>Belarus  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CAF">
+            <xs:annotation>
+               <xs:documentation>Central African Republic  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CAN">
+            <xs:annotation>
+               <xs:documentation>Canada  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CCK">
+            <xs:annotation>
+               <xs:documentation>Cocos (Keeling) Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CHE">
+            <xs:annotation>
+               <xs:documentation>Switzerland  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CHL">
+            <xs:annotation>
+               <xs:documentation>Chile  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CHN">
+            <xs:annotation>
+               <xs:documentation>China  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CIV">
+            <xs:annotation>
+               <xs:documentation>Côte d’Ivoire  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CMR">
+            <xs:annotation>
+               <xs:documentation>Cameroon  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="COD">
+            <xs:annotation>
+               <xs:documentation>Democratic Republic of the Congo  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="COG">
+            <xs:annotation>
+               <xs:documentation>Congo  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="COK">
+            <xs:annotation>
+               <xs:documentation>Cook Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="COL">
+            <xs:annotation>
+               <xs:documentation>Colombia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="COM">
+            <xs:annotation>
+               <xs:documentation>Comoros  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CPT">
+            <xs:annotation>
+               <xs:documentation>Clipperton  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CPV">
+            <xs:annotation>
+               <xs:documentation>Cabo Verde  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CRI">
+            <xs:annotation>
+               <xs:documentation>Costa Rica  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CSK">
+            <xs:annotation>
+               <xs:documentation>Czechoslovakia  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CTE">
+            <xs:annotation>
+               <xs:documentation>Canton and Enderbury Islands  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CUB">
+            <xs:annotation>
+               <xs:documentation>Cuba  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CUW">
+            <xs:annotation>
+               <xs:documentation>Curaçao  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CXR">
+            <xs:annotation>
+               <xs:documentation>Christmas Island  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CYM">
+            <xs:annotation>
+               <xs:documentation>Cayman Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CYP">
+            <xs:annotation>
+               <xs:documentation>Cyprus  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CZE">
+            <xs:annotation>
+               <xs:documentation>Czechia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DDR">
+            <xs:annotation>
+               <xs:documentation>East Germany  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DEU">
+            <xs:annotation>
+               <xs:documentation>Germany  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DHY">
+            <xs:annotation>
+               <xs:documentation>Dahomey  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DJI">
+            <xs:annotation>
+               <xs:documentation>Djibouti  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DMA">
+            <xs:annotation>
+               <xs:documentation>Dominica  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DNK">
+            <xs:annotation>
+               <xs:documentation>Denmark  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DOM">
+            <xs:annotation>
+               <xs:documentation>Dominican Republic  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DZA">
+            <xs:annotation>
+               <xs:documentation>Algeria  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ECU">
+            <xs:annotation>
+               <xs:documentation>Ecuador  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EGY">
+            <xs:annotation>
+               <xs:documentation>Egypt  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ERI">
+            <xs:annotation>
+               <xs:documentation>Eritrea  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ESH">
+            <xs:annotation>
+               <xs:documentation>Western Sahara  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ESP">
+            <xs:annotation>
+               <xs:documentation>Spain  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EST">
+            <xs:annotation>
+               <xs:documentation>Estonia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ETH">
+            <xs:annotation>
+               <xs:documentation>Ethiopia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EUR">
+            <xs:annotation>
+               <xs:documentation>European Union  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FIN">
+            <xs:annotation>
+               <xs:documentation>Finland  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FJI">
+            <xs:annotation>
+               <xs:documentation>Fiji  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FLK">
+            <xs:annotation>
+               <xs:documentation>Falkland Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FQ0">
+            <xs:annotation>
+               <xs:documentation>French Southern and Antarctic Lands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FRA">
+            <xs:annotation>
+               <xs:documentation>France  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FRO">
+            <xs:annotation>
+               <xs:documentation>Faroes  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FSM">
+            <xs:annotation>
+               <xs:documentation>Micronesia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FXX">
+            <xs:annotation>
+               <xs:documentation>Metropolitan France  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GAB">
+            <xs:annotation>
+               <xs:documentation>Gabon  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GBR">
+            <xs:annotation>
+               <xs:documentation>United Kingdom  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GEL">
+            <xs:annotation>
+               <xs:documentation>Gilbert and Ellice Islands  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GEO">
+            <xs:annotation>
+               <xs:documentation>Georgia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GGY">
+            <xs:annotation>
+               <xs:documentation>Guernsey  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GHA">
+            <xs:annotation>
+               <xs:documentation>Ghana  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GIB">
+            <xs:annotation>
+               <xs:documentation>Gibraltar  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GIN">
+            <xs:annotation>
+               <xs:documentation>Guinea  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GLP">
+            <xs:annotation>
+               <xs:documentation>Guadeloupe  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GMB">
+            <xs:annotation>
+               <xs:documentation>The Gambia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GNB">
+            <xs:annotation>
+               <xs:documentation>Guinea-Bissau  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GNQ">
+            <xs:annotation>
+               <xs:documentation>Equatorial Guinea  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GRC">
+            <xs:annotation>
+               <xs:documentation>Greece  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GRD">
+            <xs:annotation>
+               <xs:documentation>Grenada  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GRL">
+            <xs:annotation>
+               <xs:documentation>Greenland  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GTM">
+            <xs:annotation>
+               <xs:documentation>Guatemala  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GUF">
+            <xs:annotation>
+               <xs:documentation>French Guiana  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GUM">
+            <xs:annotation>
+               <xs:documentation>Guam  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GUY">
+            <xs:annotation>
+               <xs:documentation>Guyana  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HKG">
+            <xs:annotation>
+               <xs:documentation>Hong Kong  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HMD">
+            <xs:annotation>
+               <xs:documentation>Heard Island and McDonald Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HND">
+            <xs:annotation>
+               <xs:documentation>Honduras  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HRV">
+            <xs:annotation>
+               <xs:documentation>Croatia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HTI">
+            <xs:annotation>
+               <xs:documentation>Haiti  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HUN">
+            <xs:annotation>
+               <xs:documentation>Hungary  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HVO">
+            <xs:annotation>
+               <xs:documentation>Upper Volta  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IDN">
+            <xs:annotation>
+               <xs:documentation>Indonesia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IMN">
+            <xs:annotation>
+               <xs:documentation>Isle of Man  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IND">
+            <xs:annotation>
+               <xs:documentation>India  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IOT">
+            <xs:annotation>
+               <xs:documentation>British Indian Ocean Territory  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IRL">
+            <xs:annotation>
+               <xs:documentation>Ireland  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IRN">
+            <xs:annotation>
+               <xs:documentation>Iran  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IRQ">
+            <xs:annotation>
+               <xs:documentation>Iraq  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ISL">
+            <xs:annotation>
+               <xs:documentation>Iceland  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ISR">
+            <xs:annotation>
+               <xs:documentation>Israel  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ITA">
+            <xs:annotation>
+               <xs:documentation>Italy  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JAM">
+            <xs:annotation>
+               <xs:documentation>Jamaica  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JEY">
+            <xs:annotation>
+               <xs:documentation>Jersey  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JOR">
+            <xs:annotation>
+               <xs:documentation>Jordan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JPN">
+            <xs:annotation>
+               <xs:documentation>Japan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JTN">
+            <xs:annotation>
+               <xs:documentation>Johnston Island  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KAZ">
+            <xs:annotation>
+               <xs:documentation>Kazakhstan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KEN">
+            <xs:annotation>
+               <xs:documentation>Kenya  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KGZ">
+            <xs:annotation>
+               <xs:documentation>Kyrgyzstan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KHM">
+            <xs:annotation>
+               <xs:documentation>Cambodia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KIR">
+            <xs:annotation>
+               <xs:documentation>Kiribati  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KNA">
+            <xs:annotation>
+               <xs:documentation>Saint Kitts and Nevis  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KOR">
+            <xs:annotation>
+               <xs:documentation>South Korea  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KWT">
+            <xs:annotation>
+               <xs:documentation>Kuwait  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LAO">
+            <xs:annotation>
+               <xs:documentation>Laos  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LBN">
+            <xs:annotation>
+               <xs:documentation>Lebanon  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LBR">
+            <xs:annotation>
+               <xs:documentation>Liberia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LBY">
+            <xs:annotation>
+               <xs:documentation>Libya  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LCA">
+            <xs:annotation>
+               <xs:documentation>Saint Lucia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LIE">
+            <xs:annotation>
+               <xs:documentation>Liechtenstein  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LKA">
+            <xs:annotation>
+               <xs:documentation>Sri Lanka  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LSO">
+            <xs:annotation>
+               <xs:documentation>Lesotho  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LTU">
+            <xs:annotation>
+               <xs:documentation>Lithuania  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LUX">
+            <xs:annotation>
+               <xs:documentation>Luxembourg  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LVA">
+            <xs:annotation>
+               <xs:documentation>Latvia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MAC">
+            <xs:annotation>
+               <xs:documentation>Macau  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MAF">
+            <xs:annotation>
+               <xs:documentation>Saint Martin  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MAR">
+            <xs:annotation>
+               <xs:documentation>Morocco  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MCO">
+            <xs:annotation>
+               <xs:documentation>Monaco  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MDA">
+            <xs:annotation>
+               <xs:documentation>Moldova  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MDG">
+            <xs:annotation>
+               <xs:documentation>Madagascar  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MDV">
+            <xs:annotation>
+               <xs:documentation>Maldives  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MEX">
+            <xs:annotation>
+               <xs:documentation>Mexico  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MHL">
+            <xs:annotation>
+               <xs:documentation>Marshall Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MID">
+            <xs:annotation>
+               <xs:documentation>Midway Islands  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MKD">
+            <xs:annotation>
+               <xs:documentation>North Macedonia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MLI">
+            <xs:annotation>
+               <xs:documentation>Mali  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MLT">
+            <xs:annotation>
+               <xs:documentation>Malta  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MMR">
+            <xs:annotation>
+               <xs:documentation>Myanmar/Burma  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MNE">
+            <xs:annotation>
+               <xs:documentation>Montenegro  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MNG">
+            <xs:annotation>
+               <xs:documentation>Mongolia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MNP">
+            <xs:annotation>
+               <xs:documentation>Northern Mariana Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MOZ">
+            <xs:annotation>
+               <xs:documentation>Mozambique  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MRT">
+            <xs:annotation>
+               <xs:documentation>Mauritania  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MSR">
+            <xs:annotation>
+               <xs:documentation>Montserrat  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MTQ">
+            <xs:annotation>
+               <xs:documentation>Martinique  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MUS">
+            <xs:annotation>
+               <xs:documentation>Mauritius  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MWI">
+            <xs:annotation>
+               <xs:documentation>Malawi  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MYS">
+            <xs:annotation>
+               <xs:documentation>Malaysia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MYT">
+            <xs:annotation>
+               <xs:documentation>Mayotte  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NAM">
+            <xs:annotation>
+               <xs:documentation>Namibia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NCL">
+            <xs:annotation>
+               <xs:documentation>New Caledonia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NER">
+            <xs:annotation>
+               <xs:documentation>Niger  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NFK">
+            <xs:annotation>
+               <xs:documentation>Norfolk Island  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NGA">
+            <xs:annotation>
+               <xs:documentation>Nigeria  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NHB">
+            <xs:annotation>
+               <xs:documentation>New Hebrides  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NIC">
+            <xs:annotation>
+               <xs:documentation>Nicaragua  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NIU">
+            <xs:annotation>
+               <xs:documentation>Niue  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NLD">
+            <xs:annotation>
+               <xs:documentation>Netherlands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NOR">
+            <xs:annotation>
+               <xs:documentation>Norway  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NPL">
+            <xs:annotation>
+               <xs:documentation>Nepal  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NRU">
+            <xs:annotation>
+               <xs:documentation>Nauru  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NTZ">
+            <xs:annotation>
+               <xs:documentation>Neutral Zone  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NZL">
+            <xs:annotation>
+               <xs:documentation>New Zealand  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="OMN">
+            <xs:annotation>
+               <xs:documentation>Oman  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PAK">
+            <xs:annotation>
+               <xs:documentation>Pakistan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PAN">
+            <xs:annotation>
+               <xs:documentation>Panama  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PCI">
+            <xs:annotation>
+               <xs:documentation>Trust Territory of the Pacific Islands  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PCN">
+            <xs:annotation>
+               <xs:documentation>Pitcairn Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PCZ">
+            <xs:annotation>
+               <xs:documentation>Panama Canal Zone  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PER">
+            <xs:annotation>
+               <xs:documentation>Peru  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PHL">
+            <xs:annotation>
+               <xs:documentation>Philippines  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PLW">
+            <xs:annotation>
+               <xs:documentation>Palau  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PNG">
+            <xs:annotation>
+               <xs:documentation>Papua New Guinea  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="POL">
+            <xs:annotation>
+               <xs:documentation>Poland  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PRI">
+            <xs:annotation>
+               <xs:documentation>Puerto Rico  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PRK">
+            <xs:annotation>
+               <xs:documentation>North Korea  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PRT">
+            <xs:annotation>
+               <xs:documentation>Portugal  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PRY">
+            <xs:annotation>
+               <xs:documentation>Paraguay  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PSE">
+            <xs:annotation>
+               <xs:documentation>Palestine  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PUS">
+            <xs:annotation>
+               <xs:documentation>US Miscellaneous Pacific Islands  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PYF">
+            <xs:annotation>
+               <xs:documentation>French Polynesia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="QAT">
+            <xs:annotation>
+               <xs:documentation>Qatar  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="REU">
+            <xs:annotation>
+               <xs:documentation>Réunion  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RHO">
+            <xs:annotation>
+               <xs:documentation>Southern Rhodesia  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ROU">
+            <xs:annotation>
+               <xs:documentation>Romania  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RUS">
+            <xs:annotation>
+               <xs:documentation>Russia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RWA">
+            <xs:annotation>
+               <xs:documentation>Rwanda  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SAU">
+            <xs:annotation>
+               <xs:documentation>Saudi Arabia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SCG">
+            <xs:annotation>
+               <xs:documentation>Serbia and Montenegro  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SDN">
+            <xs:annotation>
+               <xs:documentation>Sudan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SEN">
+            <xs:annotation>
+               <xs:documentation>Senegal  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SGP">
+            <xs:annotation>
+               <xs:documentation>Singapore  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SGS">
+            <xs:annotation>
+               <xs:documentation>South Georgia and the South Sandwich Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SHN">
+            <xs:annotation>
+               <xs:documentation>Saint Helena, Ascension and Tristan da Cunha  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SJM">
+            <xs:annotation>
+               <xs:documentation>Svalbard and Jan Mayen  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SKM">
+            <xs:annotation>
+               <xs:documentation>Sikkim  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SLB">
+            <xs:annotation>
+               <xs:documentation>Solomon Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SLE">
+            <xs:annotation>
+               <xs:documentation>Sierra Leone  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SLV">
+            <xs:annotation>
+               <xs:documentation>El Salvador  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SMR">
+            <xs:annotation>
+               <xs:documentation>San Marino  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SOM">
+            <xs:annotation>
+               <xs:documentation>Somalia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SPM">
+            <xs:annotation>
+               <xs:documentation>Saint Pierre and Miquelon  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SRB">
+            <xs:annotation>
+               <xs:documentation>Serbia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SSD">
+            <xs:annotation>
+               <xs:documentation>South Sudan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="STP">
+            <xs:annotation>
+               <xs:documentation>São Tomé and Príncipe  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SUN">
+            <xs:annotation>
+               <xs:documentation>Soviet Union  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SUR">
+            <xs:annotation>
+               <xs:documentation>Suriname  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SVK">
+            <xs:annotation>
+               <xs:documentation>Slovakia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SVN">
+            <xs:annotation>
+               <xs:documentation>Slovenia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SWE">
+            <xs:annotation>
+               <xs:documentation>Sweden  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SWZ">
+            <xs:annotation>
+               <xs:documentation>Eswatini  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SXM">
+            <xs:annotation>
+               <xs:documentation>Sint Maarten  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SYC">
+            <xs:annotation>
+               <xs:documentation>Seychelles  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SYR">
+            <xs:annotation>
+               <xs:documentation>Syria  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TCA">
+            <xs:annotation>
+               <xs:documentation>Turks and Caicos Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TCD">
+            <xs:annotation>
+               <xs:documentation>Chad  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TGO">
+            <xs:annotation>
+               <xs:documentation>Togo  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="THA">
+            <xs:annotation>
+               <xs:documentation>Thailand  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TJK">
+            <xs:annotation>
+               <xs:documentation>Tajikistan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TKL">
+            <xs:annotation>
+               <xs:documentation>Tokelau  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TKM">
+            <xs:annotation>
+               <xs:documentation>Turkmenistan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TLS">
+            <xs:annotation>
+               <xs:documentation>Timor-Leste  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TMP">
+            <xs:annotation>
+               <xs:documentation>East Timor  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TON">
+            <xs:annotation>
+               <xs:documentation>Tonga  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TTO">
+            <xs:annotation>
+               <xs:documentation>Trinidad and Tobago  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TUN">
+            <xs:annotation>
+               <xs:documentation>Tunisia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TUR">
+            <xs:annotation>
+               <xs:documentation>Turkey  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TUV">
+            <xs:annotation>
+               <xs:documentation>Tuvalu  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TWN">
+            <xs:annotation>
+               <xs:documentation>Taiwan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TZA">
+            <xs:annotation>
+               <xs:documentation>Tanzania  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UGA">
+            <xs:annotation>
+               <xs:documentation>Uganda  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UKR">
+            <xs:annotation>
+               <xs:documentation>Ukraine  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UMI">
+            <xs:annotation>
+               <xs:documentation>United States Minor Outlying Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="URY">
+            <xs:annotation>
+               <xs:documentation>Uruguay  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="USA">
+            <xs:annotation>
+               <xs:documentation>United States  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UZB">
+            <xs:annotation>
+               <xs:documentation>Uzbekistan  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VAT">
+            <xs:annotation>
+               <xs:documentation>Vatican City State  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VCT">
+            <xs:annotation>
+               <xs:documentation>Saint Vincent and the Grenadines  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VDR">
+            <xs:annotation>
+               <xs:documentation>Democratic Republic of Vietnam  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VEN">
+            <xs:annotation>
+               <xs:documentation>Venezuela  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VGB">
+            <xs:annotation>
+               <xs:documentation>British Virgin Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VIR">
+            <xs:annotation>
+               <xs:documentation>US Virgin Islands  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VNM">
+            <xs:annotation>
+               <xs:documentation>Vietnam  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VUT">
+            <xs:annotation>
+               <xs:documentation>Vanuatu  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WAK">
+            <xs:annotation>
+               <xs:documentation>Wake Island  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WLF">
+            <xs:annotation>
+               <xs:documentation>Wallis and Futuna  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WSM">
+            <xs:annotation>
+               <xs:documentation>Samoa  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="YEM">
+            <xs:annotation>
+               <xs:documentation>Yemen  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="YMD">
+            <xs:annotation>
+               <xs:documentation>North Yemen  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="YUG">
+            <xs:annotation>
+               <xs:documentation>Yugoslavia  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ZAF">
+            <xs:annotation>
+               <xs:documentation>South Africa  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ZMB">
+            <xs:annotation>
+               <xs:documentation>Zambia  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ZR0">
+            <xs:annotation>
+               <xs:documentation>Zaire  / adm.status[deprecated]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ZWE">
+            <xs:annotation>
+               <xs:documentation>Zimbabwe  / adm.status[current]</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

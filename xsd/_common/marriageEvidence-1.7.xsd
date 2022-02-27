@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ===== Schema Header ================================= -->
 <!--	
-	Domicile Residence Evidence based on SDG Model and ISA2 Core Vocabularies
+	Marriage Evidence based on SDG Model and ISA2 Core Vocabularies
 	version 1.6
 	Notes: Use of the xsd:restriction method for reusing the Core Vocabularies. Added the EndOfMarriageType class
 	See also the table specification with design decisions: https://ihuedu-my.sharepoint.com/:x:/g/personal/i_konstantinidis_ihu_edu_gr/ES1FBLrtoqBNuINmmwklN4YB3-nlFyK8leA11HFEemE_EQ?e=fVIp5l
 -->
 <!-- ===================================================== -->
-<xsd:schema xmlns="urn:eu-de4a:xsd:CanonicalEvidenceType::DomicileRegistrationEvidence:v1.6" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:person="http://www.w3.org/ns/corevocabulary/person" xmlns:location="http://www.w3.org/ns/corevocabulary/location" xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents" xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::DomicileRegistrationEvidence:v1.6" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+<xsd:schema xmlns="urn:eu-de4a:xsd:CanonicalEvidenceType::MarriageEvidence:v1.7"
+			xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:person="http://www.w3.org/ns/corevocabulary/person"
+			xmlns:location="http://www.w3.org/ns/corevocabulary/location"
+			xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+			xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+			xmlns:cou="http://publications.europa.eu/resource/countries"
+			xmlns:gen="http://publications.europa.eu/resource/authority/human-sex"
+			xmlns:marit="http://eurovoc.europa.eu/4184"
+			xmlns:nuts="http://data.europa.eu/nuts"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::MarriageEvidence:v1.7"
+			elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	<!-- ===== Imports======================================== -->
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" schemaLocation="../_external/UBL-2.3/xsd/common/BDNDR-UnqualifiedDataTypes-1.1.xsd"/>
@@ -16,47 +29,58 @@
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyBasicComponents-v1.00.xsd"/>
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyAggregateComponents-v1.00.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="../_external/UBL-2.3/xsd/common/UBL-CommonBasicComponents-2.3.xsd"/>
+	<xsd:import namespace="http://publications.europa.eu/resource/countries" schemaLocation="../_external/Codelists/xsd/Codelist_Country.xsd"/>
+	<xsd:import namespace="http://publications.europa.eu/resource/authority/human-sex" schemaLocation="../_external/Codelists/xsd/CodeList_HumanSex.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/nuts" schemaLocation="../_external/Codelists/xsd/CodeList_NUTS2021.xsd"/>
+	<xsd:import namespace="http://eurovoc.europa.eu/4184" schemaLocation="../_external/Codelists/xsd/Codelist_MaritalStatus.xsd"/>
 	<!-- ===================================================== -->
-	<xsd:element name="DomicileRegistrationEvidence" type="DomicileRegistrationEvidenceType"/>
-	<xsd:complexType name="DomicileRegistrationEvidenceType">
+	<xsd:element name="MarriageEvidence" type="MarriageEvidenceType"/>
+	<xsd:complexType name="MarriageEvidenceType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en">
-				This class contains elements related to the Domicile Registration Evidence.
+				Official document or data proving the Marriage of two Persons.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="Identifier" type="cva:CvidentifierType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						An unambiguous reference to the Domicile Registration Evidence.
+						An unambiguous reference to the Marriage Evidence.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="IssueDate" type="udt:DateType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						The most recent date on which the  Domicile Registration Evidence instance was issued.	
+						The most recent date on which the Marriage Evidence instance was issued.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="IssuingAuthority" type="PublicOrganisationType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						A Public Organisation with official authority in charge of issuing the Residence Proof.
+						A Public Organisation with official authority in charge of issuing the Marriage Evidence.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="IssuingPlace" type="ConstrainedLocationAddressType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						The Location where the Residence Proof was issued.
+						The Location where the Marriage Evidence was issued.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="CertifiesDomicile" type="DomicileType" minOccurs="1" maxOccurs="1">
+			<xsd:element name="CertifiesMarriage" type="MarriageType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						Attesting in a formal way that the Domicile is true.
+						Attesting in a formal way that the Marriage is true.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CertifiesEndOfMarriage" type="EndOfMarriageType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						In case of divorce, this property includes information on the end of marriage
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -73,55 +97,105 @@
 			<xsd:element name="Identifier" type="cva:CvidentifierType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						Many organisations are referred to by an acronym or some other identifier. For example, among the EU institutions, the ECB is the identifier for the European Central Bank, OLAF for the European Anti-Fraud Office, and so on. These are formally recognised by the European Commission which provides a list of such acronyms. Analogous lists should be used in other contexts.
+						Attesting in a formal way that the Marriage is true.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="PrefLabel" type="udt:TextType" minOccurs="1" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organisation. An organisation may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property.
+						Many organisations are referred to by an acronym or some other identifier. For example, among the EU institutions, the ECB is the identifier for the European Central Bank, OLAF for the European Anti-Fraud Office, and so on. These are formally recognised by the European Commission which provides a list of such acronyms. Analogous lists should be used in other contexts.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 	<!--=====================================================================================-->
-	<xsd:complexType name="DomicileType">
+	<xsd:complexType name="MarriageType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en">
-				This class contains elements related to the domicile.
-			</xsd:documentation>
+					A legally accepted relationship between two Persons in which they live together.
+				</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Inhabitant" type="PersonType" minOccurs="1" maxOccurs="1">
+			<xsd:element name="DateOfMarriage" type="udt:DateType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						Person, living in the domicile.
+						The date on which the Marriage took place.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Domicile" type="ConstrainedLocationAddressType" minOccurs="1" maxOccurs="1">
+			<xsd:element name="Spouse" type="MarriedPersonType" minOccurs="2" maxOccurs="2">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						Current domicile inhabited by person.
+						The Person who was married.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PlaceOfMarriage" type="LocationAddressType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The Location where the Marriage took place.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="MarriedPersonType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				A Person who has entered into a Marriage.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="PersonType">
+				<xsd:sequence>
+					<xsd:element name="FamilyNameAfterMarriage" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="en">
+								This property contains the family name after the Marriage of the Person.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="FamilyNameBeforeMarriage" type="udt:TextType" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="en">
+								This property contains the family name before the Marriage of the Person.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="MaritalStatusBeforeMarriage" type="marit:MaritalStatusType" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="en">
+								Situation with regard to whether a Person was single, married, separated, divorced or widowed.
+								To be based on Eurovoc marital status as a codelist: https://op.europa.eu/en/web/eu-vocabularies/concept/-/resource?uri=http://eurovoc.europa.eu/4184&amp;lang=en
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
 	</xsd:complexType>
 	<!--=====================================================================================-->
 	<xsd:complexType name="PersonType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en">
-				This class contains elements related to the person
+				An individual natural person who may be dead or alive, but not imaginary.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
+			<xsd:element name="DateOfBirth" type="DateObjectType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The day on which the Person was born.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="PersonName" type="NameType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						A family name is usually shared by members of a family. This attribute also carries prefixes or suffixes which are part of the family name, e.g. “de Boer”, “van de Putte”, “von und zu Orlow”. Multiple family names, such as are commonly found in Hispanic countries, are recorded in the single family name field so that, for example, Miguel de Cervantes Saavedra's family name would be recorded as "de Cervantes Saavedra".
+						The family name and given name of a Person. At least one of the two must exist.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -132,32 +206,17 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="DateOfBirth" type="DateObjectType" minOccurs="0" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation xml:lang="en">
-						The day on which the Person was born.
-					</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="Gender" type="udt:CodeType" minOccurs="0" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation xml:lang="en">
-					The chromosomal state, and reproductive organs and structures of a Person that allows them to be distinguished as female or male or not applicable, not known or not stated.
-				</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="MaritalStatus" type="udt:CodeType" minOccurs="0" maxOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation xml:lang="en">
-						Situation with regard to whether a Person was single, married, separated, divorced or widowed.
-						To be based on Eurovoc marital status as a codelist: https://op.europa.eu/en/web/eu-vocabularies/concept/-/resource?uri=http://eurovoc.europa.eu/4184&amp;lang=en
-					</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
 			<xsd:element name="PlaceOfBirth" type="LocationAddressType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
 						The Location where the Person was born.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Gender" type="gen:GenderType" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The chromosomal state, and reproductive organs and structures of a Person that allows them to be distinguished as female or male or not applicable, not known or not stated.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -177,40 +236,22 @@
 					The authority that an official organisation has, to make legal decisions about somebody/something.
 				</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:extension base="RestrictedJurisdictionType">
-				<xsd:sequence>
-					<xsd:element name="Identifier" type="cvb:JurisdictionIDType" minOccurs="0" maxOccurs="1">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								The value for the id property is a URI for that Jurisdiction.
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<!--=====================================================================================-->
-	<xsd:complexType name="RestrictedJurisdictionType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
-					The authority that an official organisation has, to make legal decisions about somebody/something.
-				</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:restriction base="cva:JurisdictionType">
-				<xsd:sequence>
-					<xsd:element ref="cbc:Name" minOccurs="1" maxOccurs="unbounded">
-						<xsd:annotation>
-							<xsd:documentation xml:lang="en">
-								The name is simply a string that identifies the Jurisdiction, typically a country, with or without a language tag.	
-							</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-				</xsd:sequence>
-			</xsd:restriction>
-		</xsd:complexContent>
+		<xsd:sequence>
+			<xsd:element name="Identifier" type="cvb:JurisdictionIDType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The value for the id property is a URI for that Jurisdiction.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Name" type="cou:ISO3166CountryType" minOccurs="1" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						The name is simply a string that identifies the Jurisdiction, typically a country, with or without a language tag.	
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
 	</xsd:complexType>
 	<!--=====================================================================================-->
 	<xsd:complexType name="ConstrainedLocationAddressType">
@@ -222,14 +263,14 @@
 		<xsd:complexContent>
 			<xsd:extension base="AddressType">
 				<xsd:sequence>
-					<xsd:element name="AdminUnitL2" type="cvb:AdminunitSecondlineType" minOccurs="1" maxOccurs="1">
+					<xsd:element name="AdminUnitL2" type="nuts:NUTS2021Type" minOccurs="1" maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation xml:lang="en">
 								The region of the address, usually a county, state or other such area that typically encompasses several localities.
 							</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="AdminUnitL1" type="cvb:AdminunitFirstlineType" minOccurs="1" maxOccurs="1">
+					<xsd:element name="AdminUnitL1" type="cou:ISO3166CountryType" minOccurs="1" maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation xml:lang="en">
 								The uppermost administrative unit for the address, almost always a country. Best practice is to use the ISO 3166-1 code.	
@@ -250,14 +291,14 @@
 		<xsd:complexContent>
 			<xsd:extension base="AddressType">
 				<xsd:sequence>
-					<xsd:element name="AdminUnitL2" type="cvb:AdminunitSecondlineType" minOccurs="0" maxOccurs="1">
+					<xsd:element name="AdminUnitL2" type="nuts:NUTS2021Type" minOccurs="0" maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation xml:lang="en">
 								The region of the address, usually a county, state or other such area that typically encompasses several localities.
 							</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="AdminUnitL1" type="cvb:AdminunitFirstlineType" minOccurs="0" maxOccurs="1">
+					<xsd:element name="AdminUnitL1" type="cou:ISO3166CountryType" minOccurs="0" maxOccurs="1">
 						<xsd:annotation>
 							<xsd:documentation xml:lang="en">
 								The uppermost administrative unit for the address, almost always a country. Best practice is to use the ISO 3166-1 code.	
@@ -395,6 +436,30 @@
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
 						A given name, or multiple given names, are the denominator(s) that identify an individual within a family. These are given to a Person by his or her parents at birth or may be legally recognised as 'given names' through a formal process. All given names are ordered in one field so that, for example, the given name for Johann Sebastian Bach is “Johann Sebastian”.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--=====================================================================================-->
+	<xsd:complexType name="EndOfMarriageType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				Date and cause of the end of marriage.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DateOfEndOfMarriage" type="udt:DateType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Date of the end of marriage.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Cause" type="udt:TextType" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">
+						Cause of the end of marriage.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
