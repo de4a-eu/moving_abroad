@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           targetNamespace="http://data.de4a.eu/pension-status">
+	<xs:simpleType name="PensionStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACTIVE">
+				<xs:annotation>
+					<xs:documentation>ACTIVE: the citizen is receiving the unemployment benefit</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NON-ACTIVE">
+				<xs:annotation>
+					<xs:documentation>NON-ACTIVE: the citizen is not receiving the unemployment benefit</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NON-ACTIVE due to APRE">
+				<xs:annotation>
+					<xs:documentation>NON-ACTIVE due to APRE (APRE: "Cumulative and early payment of contributory unemployment benefit to foreign workers returning to their country of origin")</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NON-ACTIVE due to capitalisation">
+				<xs:annotation>
+					<xs:documentation>NON-ACTIVE when the benefit has been capitalised</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

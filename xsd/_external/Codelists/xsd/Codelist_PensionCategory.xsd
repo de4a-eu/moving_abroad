@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           targetNamespace="http://data.de4a.eu/pension-category">
+	<xs:simpleType name="PensionCategoryType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Disab/Incap Pension"/>
+			<xs:enumeration value="Family Benefits"/>
+			<xs:enumeration value="Old Age Pension"/>
+			<xs:enumeration value="Social Benefits"/>
+			<xs:enumeration value="Survivor Pension"/>
+			<xs:enumeration value="Temp Disab/Incap pension"/>			
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

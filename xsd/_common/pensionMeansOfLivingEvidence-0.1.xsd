@@ -14,6 +14,9 @@
 			xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents" 
 			xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents" 
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
+			xmlns:currency="http://data.de4a.eu/currency"
+			xmlns:penstatus="http://data.de4a.eu/pension-status"
+			xmlns:pencategory="http://data.de4a.eu/pension-category"
 			targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::PensionMeansOfLivingEvidence:v0.1" 
 			elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	<!-- ===== Imports======================================== -->
@@ -24,6 +27,9 @@
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyBasicComponents-v1.00.xsd"/>
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyAggregateComponents-v1.00.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="../_external/UBL-2.3/xsd/common/UBL-CommonBasicComponents-2.3.xsd"/>
+	<xsd:import namespace="http://data.de4a.eu/currency" schemaLocation="../_external/Codelists/xsd/Codelist_Currency.xsd"/>
+	<xsd:import namespace="http://data.de4a.eu/pension-status" schemaLocation="../_external/Codelists/xsd/Codelist_PensionStatus.xsd"/>
+	<xsd:import namespace="http://data.de4a.eu/pension-category" schemaLocation="../_external/Codelists/xsd/Codelist_PensionCategory.xsd"/>
 	<!-- ===================================================== -->
 	<xsd:element name="PensionMeansOfLivingEvidence" type="PensionMeansOfLivingEvidenceType"/>
 	<xsd:complexType name="PensionMeansOfLivingEvidenceType">
@@ -136,42 +142,19 @@
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="PensionCategory" minOccurs="1" maxOccurs="1">
+			<xsd:element name="PensionCategory" type="pencategory:PensionCategoryType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
 						Literals of the specific codes of the Spanish pension system. 
 					</xsd:documentation>
 				</xsd:annotation>
-				<xsd:simpleType>
-					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="Disab/Incap Pension"/>
-						<xsd:enumeration value="Family Benefits"/>
-						<xsd:enumeration value="Old Age Pension"/>
-						<xsd:enumeration value="Social Benefits"/>
-						<xsd:enumeration value="Survivor Pension"/>
-						<xsd:enumeration value="Temp Disab/Incap pension"/>
-					</xsd:restriction>
-				</xsd:simpleType>
 			</xsd:element>			
-			<xsd:element name="Status" minOccurs="1" maxOccurs="1">
+			<xsd:element name="Status" type="penstatus:PensionStatusType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
 						Status of the benefit.
-						The possible values are:
-							- ACTIVE: the citizen is receiving the unemployment benefit
-							- NON-ACTIVE: the citizen is not receiving the unemployment benefit
-							- NON-ACTIVE due to APRE (APRE: "Cumulative and early payment of contributory unemployment benefit to foreign workers returning to their country of origin")
-							- NON-ACTIVE when the benefit has been capitalised
 					</xsd:documentation>
-				</xsd:annotation>
-				<xsd:simpleType>
-					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="ACTIVE"/>
-						<xsd:enumeration value="NON-ACTIVE"/>
-						<xsd:enumeration value="NON-ACTIVE due to APRE"/>
-						<xsd:enumeration value="NON-ACTIVE due to capitalisation"/>
-					</xsd:restriction>
-				</xsd:simpleType>
+				</xsd:annotation>				
 			</xsd:element>
 			<xsd:element name="GrossAmount" type="MonetaryAmountType" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
@@ -247,311 +230,12 @@
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Currency" type="udt:DateType" minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="Currency" type="currency:CurrencyType" minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						The currency in which the Monetary Amount is expressed. Enumeration retrieved from https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/currency (file currencies.xml, authority-code field used). 
+						The currency in which the Monetary Amount is expressed. 
 					</xsd:documentation>
-				</xsd:annotation>
-				<!-- Simple length restriction rule
-				<xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:pattern value="[a-z]{3}" />
-                    </xsd:restriction>
-                </xsd:simpleType> -->
-				<xsd:simpleType>
-					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="AED"/>
-						<xsd:enumeration value="AFN"/>
-						<xsd:enumeration value="ALL"/>
-						<xsd:enumeration value="AMD"/>
-						<xsd:enumeration value="ANG"/>
-						<xsd:enumeration value="AOA"/>
-						<xsd:enumeration value="ARS"/>
-						<xsd:enumeration value="AUD"/>
-						<xsd:enumeration value="AWG"/>
-						<xsd:enumeration value="AZN"/>
-						<xsd:enumeration value="BAM"/>
-						<xsd:enumeration value="BBD"/>
-						<xsd:enumeration value="BDT"/>
-						<xsd:enumeration value="BGN"/>
-						<xsd:enumeration value="BHD"/>
-						<xsd:enumeration value="BIF"/>
-						<xsd:enumeration value="BMD"/>
-						<xsd:enumeration value="BND"/>
-						<xsd:enumeration value="BOB"/>
-						<xsd:enumeration value="BRL"/>
-						<xsd:enumeration value="BSD"/>
-						<xsd:enumeration value="BTN"/>
-						<xsd:enumeration value="BWP"/>
-						<xsd:enumeration value="BYR"/>
-						<xsd:enumeration value="BZD"/>
-						<xsd:enumeration value="CAD"/>
-						<xsd:enumeration value="CDF"/>
-						<xsd:enumeration value="CHF"/>
-						<xsd:enumeration value="CLP"/>
-						<xsd:enumeration value="CNY"/>
-						<xsd:enumeration value="COP"/>
-						<xsd:enumeration value="CRC"/>
-						<xsd:enumeration value="CUC"/>
-						<xsd:enumeration value="CUP"/>
-						<xsd:enumeration value="CVE"/>
-						<xsd:enumeration value="CZK"/>
-						<xsd:enumeration value="DJF"/>
-						<xsd:enumeration value="DKK"/>
-						<xsd:enumeration value="DOP"/>
-						<xsd:enumeration value="DZD"/>
-						<xsd:enumeration value="EEK"/>
-						<xsd:enumeration value="EGP"/>
-						<xsd:enumeration value="ERN"/>
-						<xsd:enumeration value="ETB"/>
-						<xsd:enumeration value="EUR"/>
-						<xsd:enumeration value="FJD"/>
-						<xsd:enumeration value="FKP"/>
-						<xsd:enumeration value="GBP"/>
-						<xsd:enumeration value="GEL"/>
-						<xsd:enumeration value="GHS"/>
-						<xsd:enumeration value="GIP"/>
-						<xsd:enumeration value="GMD"/>
-						<xsd:enumeration value="GNF"/>
-						<xsd:enumeration value="GTQ"/>
-						<xsd:enumeration value="GYD"/>
-						<xsd:enumeration value="HKD"/>
-						<xsd:enumeration value="HNL"/>
-						<xsd:enumeration value="HRK"/>
-						<xsd:enumeration value="HTG"/>
-						<xsd:enumeration value="HUF"/>
-						<xsd:enumeration value="IDR"/>
-						<xsd:enumeration value="ILS"/>
-						<xsd:enumeration value="INR"/>
-						<xsd:enumeration value="IQD"/>
-						<xsd:enumeration value="IRR"/>
-						<xsd:enumeration value="ISK"/>
-						<xsd:enumeration value="JMD"/>
-						<xsd:enumeration value="JOD"/>
-						<xsd:enumeration value="JPY"/>
-						<xsd:enumeration value="KES"/>
-						<xsd:enumeration value="KGS"/>
-						<xsd:enumeration value="KHR"/>
-						<xsd:enumeration value="KMF"/>
-						<xsd:enumeration value="KPW"/>
-						<xsd:enumeration value="KRW"/>
-						<xsd:enumeration value="KWD"/>
-						<xsd:enumeration value="KYD"/>
-						<xsd:enumeration value="KZT"/>
-						<xsd:enumeration value="LAK"/>
-						<xsd:enumeration value="LBP"/>
-						<xsd:enumeration value="LKR"/>
-						<xsd:enumeration value="LRD"/>
-						<xsd:enumeration value="LSL"/>
-						<xsd:enumeration value="LTL"/>
-						<xsd:enumeration value="LVL"/>
-						<xsd:enumeration value="LYD"/>
-						<xsd:enumeration value="MAD"/>
-						<xsd:enumeration value="MDL"/>
-						<xsd:enumeration value="MGA"/>
-						<xsd:enumeration value="MKD"/>
-						<xsd:enumeration value="MMK"/>
-						<xsd:enumeration value="MNT"/>
-						<xsd:enumeration value="MOP"/>
-						<xsd:enumeration value="MRO"/>
-						<xsd:enumeration value="MUR"/>
-						<xsd:enumeration value="MVR"/>
-						<xsd:enumeration value="MWK"/>
-						<xsd:enumeration value="MXN"/>
-						<xsd:enumeration value="MYR"/>
-						<xsd:enumeration value="MZN"/>
-						<xsd:enumeration value="NAD"/>
-						<xsd:enumeration value="NGN"/>
-						<xsd:enumeration value="NIO"/>
-						<xsd:enumeration value="NOK"/>
-						<xsd:enumeration value="NPR"/>
-						<xsd:enumeration value="NZD"/>
-						<xsd:enumeration value="OMR"/>
-						<xsd:enumeration value="PAB"/>
-						<xsd:enumeration value="PEN"/>
-						<xsd:enumeration value="PGK"/>
-						<xsd:enumeration value="PHP"/>
-						<xsd:enumeration value="PKR"/>
-						<xsd:enumeration value="PLN"/>
-						<xsd:enumeration value="PYG"/>
-						<xsd:enumeration value="QAR"/>
-						<xsd:enumeration value="RON"/>
-						<xsd:enumeration value="RSD"/>
-						<xsd:enumeration value="RUB"/>
-						<xsd:enumeration value="RWF"/>
-						<xsd:enumeration value="SAR"/>
-						<xsd:enumeration value="SBD"/>
-						<xsd:enumeration value="SCR"/>
-						<xsd:enumeration value="SDG"/>
-						<xsd:enumeration value="SEK"/>
-						<xsd:enumeration value="SGD"/>
-						<xsd:enumeration value="SHP"/>
-						<xsd:enumeration value="SLL"/>
-						<xsd:enumeration value="SOS"/>
-						<xsd:enumeration value="SRD"/>
-						<xsd:enumeration value="STD"/>
-						<xsd:enumeration value="SYP"/>
-						<xsd:enumeration value="SZL"/>
-						<xsd:enumeration value="THB"/>
-						<xsd:enumeration value="TJS"/>
-						<xsd:enumeration value="TMT"/>
-						<xsd:enumeration value="TND"/>
-						<xsd:enumeration value="TOP"/>
-						<xsd:enumeration value="TRY"/>
-						<xsd:enumeration value="TTD"/>
-						<xsd:enumeration value="TWD"/>
-						<xsd:enumeration value="TZS"/>
-						<xsd:enumeration value="UAH"/>
-						<xsd:enumeration value="UGX"/>
-						<xsd:enumeration value="USD"/>
-						<xsd:enumeration value="USN"/>
-						<xsd:enumeration value="USS"/>
-						<xsd:enumeration value="UYU"/>
-						<xsd:enumeration value="UZS"/>
-						<xsd:enumeration value="VEF"/>
-						<xsd:enumeration value="VND"/>
-						<xsd:enumeration value="VUV"/>
-						<xsd:enumeration value="WST"/>
-						<xsd:enumeration value="XAF"/>
-						<xsd:enumeration value="XCD"/>
-						<xsd:enumeration value="XOF"/>
-						<xsd:enumeration value="XPF"/>
-						<xsd:enumeration value="XTS"/>
-						<xsd:enumeration value="XXX"/>
-						<xsd:enumeration value="YER"/>
-						<xsd:enumeration value="ZAR"/>
-						<xsd:enumeration value="ZMK"/>
-						<xsd:enumeration value="ZWL"/>
-						<xsd:enumeration value="SQS"/>
-						<xsd:enumeration value="TVD"/>
-						<xsd:enumeration value="ADF"/>
-						<xsd:enumeration value="ADP"/>
-						<xsd:enumeration value="ATS"/>
-						<xsd:enumeration value="BEF"/>
-						<xsd:enumeration value="CYP"/>
-						<xsd:enumeration value="DEM"/>
-						<xsd:enumeration value="ESP"/>
-						<xsd:enumeration value="FIM"/>
-						<xsd:enumeration value="FRF"/>
-						<xsd:enumeration value="GRD"/>
-						<xsd:enumeration value="IEP"/>
-						<xsd:enumeration value="ITL"/>
-						<xsd:enumeration value="LUF"/>
-						<xsd:enumeration value="MCF"/>
-						<xsd:enumeration value="MTL"/>
-						<xsd:enumeration value="NLG"/>
-						<xsd:enumeration value="PTE"/>
-						<xsd:enumeration value="SIT"/>
-						<xsd:enumeration value="SKK"/>
-						<xsd:enumeration value="SML"/>
-						<xsd:enumeration value="VAL"/>
-						<xsd:enumeration value="XEU"/>
-						<xsd:enumeration value="AFA"/>
-						<xsd:enumeration value="ALK"/>
-						<xsd:enumeration value="AON"/>
-						<xsd:enumeration value="AOR"/>
-						<xsd:enumeration value="ARM"/>
-						<xsd:enumeration value="ARL"/>
-						<xsd:enumeration value="ARP"/>
-						<xsd:enumeration value="ARA"/>
-						<xsd:enumeration value="AZM"/>
-						<xsd:enumeration value="BGJ"/>
-						<xsd:enumeration value="BGK"/>
-						<xsd:enumeration value="BGL"/>
-						<xsd:enumeration value="BOP"/>
-						<xsd:enumeration value="BRB"/>
-						<xsd:enumeration value="BRC"/>
-						<xsd:enumeration value="BRE"/>
-						<xsd:enumeration value="BRN"/>
-						<xsd:enumeration value="BRR"/>
-						<xsd:enumeration value="BRZ"/>
-						<xsd:enumeration value="CLE"/>
-						<xsd:enumeration value="RSD"/>
-						<xsd:enumeration value="CSJ"/>
-						<xsd:enumeration value="CSK"/>
-						<xsd:enumeration value="DDM"/>
-						<xsd:enumeration value="ECS"/>
-						<xsd:enumeration value="GQE"/>
-						<xsd:enumeration value="GNE"/>
-						<xsd:enumeration value="GHC"/>
-						<xsd:enumeration value="GWP"/>
-						<xsd:enumeration value="ILP"/>
-						<xsd:enumeration value="ILR"/>
-						<xsd:enumeration value="ISJ"/>
-						<xsd:enumeration value="LAJ"/>
-						<xsd:enumeration value="MGF"/>
-						<xsd:enumeration value="MKN"/>
-						<xsd:enumeration value="MLF"/>
-						<xsd:enumeration value="MVQ"/>
-						<xsd:enumeration value="MXP"/>
-						<xsd:enumeration value="MZM"/>
-						<xsd:enumeration value="NFD"/>
-						<xsd:enumeration value="PEH"/>
-						<xsd:enumeration value="PEI"/>
-						<xsd:enumeration value="PLZ"/>
-						<xsd:enumeration value="ROL"/>
-						<xsd:enumeration value="RUR"/>
-						<xsd:enumeration value="SDD"/>
-						<xsd:enumeration value="SRG"/>
-						<xsd:enumeration value="SUR"/>
-						<xsd:enumeration value="SVC"/>
-						<xsd:enumeration value="TJR"/>
-						<xsd:enumeration value="TMM"/>
-						<xsd:enumeration value="TPE"/>
-						<xsd:enumeration value="TRL"/>
-						<xsd:enumeration value="UAK"/>
-						<xsd:enumeration value="UGS"/>
-						<xsd:enumeration value="UYN"/>
-						<xsd:enumeration value="VEB"/>
-						<xsd:enumeration value="VNC"/>
-						<xsd:enumeration value="YDD"/>
-						<xsd:enumeration value="YUS"/>
-						<xsd:enumeration value="YUF"/>
-						<xsd:enumeration value="YUD"/>
-						<xsd:enumeration value="YUN"/>
-						<xsd:enumeration value="YUR"/>
-						<xsd:enumeration value="YUO"/>
-						<xsd:enumeration value="YUG"/>
-						<xsd:enumeration value="YUM"/>
-						<xsd:enumeration value="ZRN"/>
-						<xsd:enumeration value="ZRZ"/>
-						<xsd:enumeration value="ZWC"/>
-						<xsd:enumeration value="ZWD"/>
-						<xsd:enumeration value="ZWN"/>
-						<xsd:enumeration value="ZWR"/>
-						<xsd:enumeration value="MTP"/>
-						<xsd:enumeration value="SSP"/>
-						<xsd:enumeration value="ZMW"/>
-						<xsd:enumeration value="PEN"/>
-						<xsd:enumeration value="BYN"/>
-						<xsd:enumeration value="MRU"/>
-						<xsd:enumeration value="STN"/>
-						<xsd:enumeration value="VES"/>
-						<xsd:enumeration value="ZWL"/>
-						<xsd:enumeration value="BOV"/>
-						<xsd:enumeration value="CHE"/>
-						<xsd:enumeration value="CHW"/>
-						<xsd:enumeration value="CLF"/>
-						<xsd:enumeration value="COU"/>
-						<xsd:enumeration value="MXV"/>
-						<xsd:enumeration value="UYI"/>
-						<xsd:enumeration value="UYW"/>
-						<xsd:enumeration value="XAG"/>
-						<xsd:enumeration value="XAU"/>
-						<xsd:enumeration value="XBA"/>
-						<xsd:enumeration value="XBB"/>
-						<xsd:enumeration value="XBC"/>
-						<xsd:enumeration value="XBD"/>
-						<xsd:enumeration value="XDR"/>
-						<xsd:enumeration value="XPD"/>
-						<xsd:enumeration value="XPT"/>
-						<xsd:enumeration value="XSU"/>
-						<xsd:enumeration value="XUA"/>
-						<xsd:enumeration value="XBT"/>
-						<xsd:enumeration value="VED"/>
-					</xsd:restriction>
-				</xsd:simpleType>
+				</xsd:annotation>				
 			</xsd:element>			
 			<xsd:element name="Amount" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>

@@ -14,6 +14,8 @@
 			xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents" 
 			xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents" 
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
+			xmlns:penstatus="http://data.de4a.eu/pension-status"
+			xmlns:contract="http://data.de4a.eu/pension-contract-type"
 			targetNamespace="urn:eu-de4a:xsd:CanonicalEvidenceType::WorkingLifeMeansOfLivingEvidence:v0.1" 
 			elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	<!-- ===== Imports======================================== -->
@@ -24,6 +26,8 @@
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/BasicComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyBasicComponents-v1.00.xsd"/>
 	<xsd:import namespace="http://www.w3.org/ns/corevocabulary/AggregateComponents" schemaLocation="../_external/Core_Vocabularies_XML_Schema_v1.00/xsd/CoreVocabularyAggregateComponents-v1.00.xsd"/>
 	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="../_external/UBL-2.3/xsd/common/UBL-CommonBasicComponents-2.3.xsd"/>
+	<xsd:import namespace="http://data.de4a.eu/pension-status" schemaLocation="../_external/Codelists/xsd/Codelist_PensionStatus.xsd"/>
+	<xsd:import namespace="http://data.de4a.eu/pension-contract-type" schemaLocation="../_external/Codelists/xsd/Codelist_PensionContractType.xsd"/>
 	<!-- ===================================================== -->
 	<xsd:element name="WorkingLifeMeansOfLivingEvidence" type="WorkingLifeMeansOfLivingEvidenceType"/>
 	<xsd:complexType name="WorkingLifeMeansOfLivingEvidenceType">
@@ -160,25 +164,12 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Status" minOccurs="1" maxOccurs="1">
+			<xsd:element name="Status" type="penstatus:PensionStatusType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
-						Status of the benefit.
-						The possible values are:
-							- ACTIVE: the citizen is receiving the unemployment benefit
-							- NON-ACTIVE: the citizen is not receiving the unemployment benefit
-							- NON-ACTIVE due to APRE (APRE: "Cumulative and early payment of contributory unemployment benefit to foreign workers returning to their country of origin")
-							- NON-ACTIVE when the benefit has been capitalised
+						Status of the benefit.						
 					</xsd:documentation>
 				</xsd:annotation>
-				<xsd:simpleType>
-					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="ACTIVE"/>
-						<xsd:enumeration value="NON-ACTIVE"/>
-						<xsd:enumeration value="NON-ACTIVE due to APRE"/>
-						<xsd:enumeration value="NON-ACTIVE due to capitalisation"/>
-					</xsd:restriction>
-				</xsd:simpleType>
 			</xsd:element>
 			<xsd:element name="PeriodOfTime" type="PeriodOfTimeType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
@@ -190,22 +181,12 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="ContractType" minOccurs="1" maxOccurs="1">
+			<xsd:element name="ContractType" type="contract:PensionContractType" minOccurs="1" maxOccurs="1">
 				<xsd:annotation>
 					<xsd:documentation xml:lang="en">
 						Identifier of the employment contract.
 					</xsd:documentation>
-				</xsd:annotation>
-				<xsd:simpleType>
-					<xsd:restriction base="xsd:string">
-						<xsd:enumeration value="FULL-TIME"/>
-						<xsd:enumeration value="PART-TIME"/>
-						<xsd:enumeration value="SEASONAL"/>
-						<xsd:enumeration value="PERMANENT"/>
-						<xsd:enumeration value="FIXED TERM"/>
-						<xsd:enumeration value="TEMPORARY"/>
-					</xsd:restriction>
-				</xsd:simpleType>
+				</xsd:annotation>				
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>

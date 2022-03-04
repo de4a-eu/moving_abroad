@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           targetNamespace="http://data.de4a.eu/pension-contract-type">
+	<xs:simpleType name="PensionContractType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PART-TIME"/>
+			<xs:enumeration value="FULL-TIME"/>
+			<xs:enumeration value="SEASONAL"/>
+			<xs:enumeration value="PERMANENT"/>
+			<xs:enumeration value="FIXED TERM"/>
+			<xs:enumeration value="TEMPORARY"/>					
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
