@@ -31,7 +31,7 @@
 	<xsd:import namespace="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" schemaLocation="../_external/UBL-2.3/xsd/common/BDNDR-UnqualifiedDataTypes-1.1.xsd"/>
 	<xsd:import namespace="http://publications.europa.eu/resource/countries" schemaLocation="../_external/Codelists/xsd/Codelist_Country.xsd"/>
 	<xsd:import namespace="http://publications.europa.eu/resource/authority/human-sex" schemaLocation="../_external/Codelists/xsd/CodeList_HumanSex.xsd"/>
-	<xsd:import namespace="http://data.europa.eu/nuts" schemaLocation="../_external/Codelists/xsd/CodeList_NUTS2021.xsd"/>
+	<xsd:import namespace="http://data.europa.eu/nuts" schemaLocation="../_external/Codelists/xsd/Codelist_NUTS2021.xsd"/>
 	<xsd:import namespace="http://eurovoc.europa.eu/4184" schemaLocation="../_external/Codelists/xsd/Codelist_MaritalStatus.xsd"/>
 	<!-- ===================================================== -->
 	<xsd:element name="BirthEvidence" type="BirthEvidenceType"/>
