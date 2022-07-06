@@ -782,7 +782,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="XOF">
 				<xs:annotation>
-				<lg.version lg="eng">CFA Franc (BCEAO)</xs:documentation>
+				  <xs:documentation>CFA Franc (BCEAO)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="XPF">
@@ -792,12 +792,12 @@
 			</xs:enumeration>
 			<xs:enumeration value="XTS">
 				<xs:annotation>
-				<lg.version lg="eng">Code reserved for testing purposes</xs:documentation>
+				  <xs:documentation>Code reserved for testing purposes</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="XXX">
 				<xs:annotation>
-				<lg.version lg="eng">No currency</xs:documentation>
+				  <xs:documentation>No currency</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="YER">
